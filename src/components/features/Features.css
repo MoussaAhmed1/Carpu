@@ -1,0 +1,20 @@
+/* start features */
+.features .row i{
+    color: white;
+}
+.features .row .text h4{
+color: var(--main-header);
+}
+.features .row .text p{
+    color: var(--main-paragraph);
+}
+
+.features{
+    position: relative;
+    top: -3em;
+}
+.features .feature-content{
+    width: 13em;
+    margin: auto;
+}
+/* end features */

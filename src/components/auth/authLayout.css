@@ -1,0 +1,106 @@
+*{
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+
+.auth{
+    background-image: url("../../assets/women2_car.jpg");
+    background-size: cover;
+    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+    min-height: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+.auth-background  {
+
+    height: 36em;
+} 
+ .overlay{
+    background: rgb(24 53 219 / 25%);
+    width: 100%;
+    min-height: 100%;
+    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+    z-index: 99;
+    position: absolute;
+}
+.authSection .shape{
+    /* -webkit-clip-path: polygon(12% 0%, 100% 0%, 80% 160%, 0% 100%);
+    clip-path: polygon(12% 0%, 100% 0%, 80% 160%, 0% 100%); */
+    position: absolute;
+    top: 74%;
+    left: 4%;
+    height: 10em;
+    width: 34em;
+    background: linear-gradient(11deg, #0093E9 0%, #80D0C7 100%);
+    opacity: 0.6;
+
+}
+.authSection .shape2{
+    top: 9%;
+    left: 2%;
+}
+
+#div2{
+    width: 150px;
+    height: 150px;
+    border: 3px solid #05ffb0;
+    border-radius: 50%;
+    padding: 20px;
+    text-align: center;
+}
+.circle {
+    background-color: none;
+    border: 3.5em solid #4bb7d5;
+    height: 29em;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 29em;
+    position: absolute;
+    right: -19em;
+    z-index: 1;
+    top: 8.2em;
+    
+}
+
+.innerCircle {
+    background-color: none;
+    border: 4px dashed #000;
+    height: 27em;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 29em;
+    position: absolute;
+    right: -5em;
+    z-index: 1;
+    top: -3em;
+}
+
+.header{
+    z-index: 6;
+}
+
+.icon{
+    width: 4.5em;
+    position: relative;
+}
+.googleMap {
+    width: 3.5em;
+    top: 20em;
+}
+.yellowCar {
+    width: 4.7em;
+    position: relative;
+    left: 4em;
+    transform: rotate(54deg);
+}
+.dots {
+    position: absolute;
+    bottom: 0;
+    right: -4em;
+    width: 8em;
+}

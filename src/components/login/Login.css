@@ -1,0 +1,82 @@
+.input-group-text {
+
+  background: #fff;
+}
+
+
+
+.form .userprofile {
+  overflow: hidden;
+}
+
+/*old*/
+.Login {
+  padding: 35px;
+  /* border: #0093E9 solid 1px; */
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  /* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); */
+}
+
+.form {
+  margin: 10% 15%;
+  padding: 6%;
+  border: solid 1px #cdc9c9;
+  min-width: 50%;
+  border-radius: 1%;
+  /* padding: 5%; */
+  margin-bottom: 5px;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px, rgb(255 255 255 / 80%) -6px -2px 16px 0px;
+  margin: auto;
+  min-width: 30%;
+  max-width: 66%;
+  /* padding-bottom: 30px; */
+  position: relative;
+  z-index: 3;
+  background: #fff;
+}
+.form button {
+  width: 80%;
+  margin: auto;
+}
+
+.form .userprofile {
+    padding: 0.3em;
+    width: 20%;
+    position: absolute;
+    top: -1.8em;
+    margin: auto;
+    margin-bottom: -16em;
+    text-align: center;
+    background: #fff;
+    border-radius: 50px;
+    border: 0.5px solid #fff;
+    margin: auto;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    margin-bottom: -4em;
+    left: 40%;
+    border-radius: 53%;
+
+  }
+  .input-group {
+ 
+    border-bottom: 1px solid #444;
+}
+
+.Login .login-btn {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
+.Login input:hover {
+  outline: none;
+}
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+ 
+  border: none;
+ 
+}
+.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu), .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3) {
+
+  border: none;
+}
