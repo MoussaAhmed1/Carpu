@@ -18,6 +18,7 @@ const AuhtLayout = () => {
   let location = useLocation();
   // console.log(history);
   console.log(location.pathname);
+  
   return (
     <Router>
       <section className="authSection">
@@ -28,7 +29,8 @@ const AuhtLayout = () => {
             <div className="auth">
               <img src={dots} alt=" dots" className="dots"/>
               <div className="overlay d-flex justify-content-center align-items-end">
-              <h1 className="display-5 text-center p-3 lead text-light fw-bold ">the best place to find people going to your distiny</h1>
+              {/* <h1 className="display-5 text-center p-3 lead text-light fw-bold ">the best place to find people going to your distiny</h1> */}
+              <h1 className="display-5 text-center p-3 lead text-light fw-bold ">the best place to connecting people in the same direction</h1>
               </div>
             </div>
           </div>

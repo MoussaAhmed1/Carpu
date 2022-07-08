@@ -1,20 +1,20 @@
-import React from 'react';
 //import reportWebVitals from './reportWebVitals';
 // import {createRoot} from 'react-dom/client'
-
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 // import '../node_modules/bootstrap/dist/css/bo
+// import  'react-bootstrap';
+// const container = document.getElementById("root")
+// const root = createRoot(root);
+// createRoot(container!) if you use TypeScript
+import React from 'react';
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import './index.css';
-// import  'react-bootstrap';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import {BrowserRouter as Router} from "react-router-dom";
-// const container = document.getElementById("root")
-// const root = createRoot(root);
 import { createRoot } from 'react-dom/client';
 const container = document.getElementById('root');
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
+const root = createRoot(container); 
 root.render(
   <Router>
 <App tab="home" />

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Error404 from "./components/Error404/Error404";
 import Nav from "./components/Nav/Nav";
 import React from "react";
+import CreateRides from './components/Create_rides/CreateRides';
 function App() {
   return (
     <React.Fragment>
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/createRides" exact>
+            <CreateRides />
           </Route>
           <Route path="/authLayout/login" exact>
             <AuthLayout />

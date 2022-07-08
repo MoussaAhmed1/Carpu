@@ -1,6 +1,7 @@
 import pngegg2 from "../../assets/Home/pngegg (2).png";
 import pngegg1 from "../../assets/Home/blob.svg";
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 const Landing = () => {
   return (
     <React.Fragment>
@@ -9,7 +10,7 @@ const Landing = () => {
         <div className="container">
           <div className="row ">
             <div className="col-md-6 col-sm-12 d-flex justify-content-center  align-items-center">
-              <div className="text-content ">
+              <div className="text-content">
                 <h1 className="text-left text-uppercase p-2 w-100 display-5 fw-bold">
                   CarPool app For Better Commute
                 </h1>
@@ -18,6 +19,10 @@ const Landing = () => {
                   neighbours , to make your daily commute simple fun and more
                   rewarding{" "}
                 </h5>
+                <div className="buttons">
+                  <Link to="/CreateRides" className="btn btn-lg btn-success mx-2">offer a ride</Link>
+                  <Link to="/CreateRides" className="btn btn-lg btn-outline-success mx-2 color-light "><span className="">find a ride</span></Link>
+                </div>
               </div>
             </div>
             <div className="col-md-6 col-sm-12 ">

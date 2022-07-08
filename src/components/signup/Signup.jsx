@@ -21,7 +21,7 @@ export default function Signup() {
     };
   return (
     <React.Fragment>
-    <div className="form login justify-content-center align-items-center mt-5">
+    <div className="form login justify-content-center align-items-center mt-5 " >
       <div className="text-center userprofile d-flex justify-content-center d-sm-none d-md-block">
         <img src={signupImg} alt="" className="img-fluid" />
       </div>
@@ -39,6 +39,7 @@ export default function Signup() {
             aria-describedby="FullName"
             onChange={(e) => handelInput(e)}
             value={user.fullName}
+            autoComplete="false"
           />
            <span className="input-group-text lead" id="FullName">
           <i className="fa fa-user-circle" aria-hidden="true"></i>
