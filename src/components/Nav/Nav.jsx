@@ -1,6 +1,6 @@
 import "./Nav.css";
-import { Link } from 'react-router-dom';
-import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import React, { Component } from "react";
 const Nav = () => {
   return (
     <React.Fragment>
@@ -27,20 +27,17 @@ const Nav = () => {
                   Home
                 </Link>
               </li>
+
               <li className="nav-item">
                 <Link className="nav-link font-weight-" to="#Features">
                   Features
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#How_It_Work">
-                  How It Work
-                </Link>
-              </li>
 
               <li className="nav-item">
                 <Link className="nav-link" to="#User_Reviews">
-                  User Reviews
+                <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>1</span>
+                Notifications 
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -52,12 +49,26 @@ const Nav = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                 <span className="fa fa-user fa-lg"></span> 
+                  <span className="fa fa-user fa-lg"></span>
+                  
                 </Link>
                 <ul
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
+                  <li className="nav-item">
+                    <Link className="dropdown-item" to="/profile/10">
+                      My Profile
+                      
+                    </Link>
+                    
+                  </li>
+                  <li className="nav-item">
+                    <Link className="dropdown-item" to="/ProfileSetting/10">
+                      Settings
+                    </Link>
+                    
+                  </li>
                   <li>
                     <Link className="dropdown-item" to="/authLayout/login">
                       Log in

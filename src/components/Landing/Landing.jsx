@@ -1,6 +1,6 @@
 import pngegg2 from "../../assets/Home/pngegg (2).png";
 import pngegg1 from "../../assets/Home/blob.svg";
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 const Landing = () => {
   return (

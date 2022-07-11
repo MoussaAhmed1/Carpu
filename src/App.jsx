@@ -6,6 +6,9 @@ import Error404 from "./components/Error404/Error404";
 import Nav from "./components/Nav/Nav";
 import React from "react";
 import CreateRides from './components/Create_rides/CreateRides';
+import Footer from "./components/footer/Footer";
+import ProfileView from './components/profile/profileView/ProfileView';
+import ProfileSettings from './components/profile/ProfileSettings/ProfileSettings';
 function App() {
   return (
     <React.Fragment>
@@ -24,11 +27,18 @@ function App() {
           <Route path="/authLayout/Sign-up" exact>
             <AuthLayout />
           </Route>
+          <Route path="/profile/:id" exact>
+            <ProfileView />
+          </Route>
+          <Route path="/ProfileSetting/:id" exact>
+            <ProfileSettings />
+          </Route>
           <Route path="*">
             <Error404 />
           </Route>
         </Switch>
       </Router>
+      <Footer />
     </React.Fragment>
   );
 }

@@ -69,6 +69,10 @@ nav {
 .navbar .navbar-nav >li:hover::after{
     width: 100%;
 }
-
-
+/* badge */
+.badge {
+    padding: 0.3em 0.5em;
+    border-radius: 050%;
+    background: #ef1f1fd1;
+}
 /* end header*/
