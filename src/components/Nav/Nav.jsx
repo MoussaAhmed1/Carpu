@@ -36,8 +36,14 @@ const Nav = () => {
 
               <li className="nav-item">
                 <Link className="nav-link" to="#User_Reviews">
+                <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>3</span>
+                <i class="fa-regular fa-envelope"></i>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="#User_Reviews">
                 <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>1</span>
-                Notifications 
+                <span class="fa-regular fa-bell"></span>
                 </Link>
               </li>
               <li className="nav-item dropdown">
