@@ -1,8 +1,9 @@
-import gallary3 from "../../assets/Home/gallery-03.jpg";
-import gallary4 from "../../assets/Home/gallery-04.png";
-import gallary5 from "../../assets/Home/gallery-05.jpg";
-import React, { Component } from 'react'
+// import pf + "Home/gallery-03.jpg" from "pf + "Home/gallery-03.jpg";
+// import gallary4 from "pf + "Home/gallery-04.png";
+// import gallary5 from "pf + "Home/gallery-05.jpg";
+import React from 'react'
 const Howitworks = () => {
+  const pf = process.env.REACT_APP_PUBLIC_FOLDER;
     return ( <React.Fragment>
     
     {/* <!-- start how it works --> */}
@@ -16,7 +17,7 @@ const Howitworks = () => {
             <div className="position-relative  col-md-4 col-sm-6 w-25 p-0">
               <div className="number nbox anmi1 p-2 mb-4">1</div>
               <div className="box">
-                <img className="img-fluid  " src={gallary3} alt="" />
+                <img className="img-fluid  " src={pf + "Home/gallery-03.jpg"} alt="" />
                 <div className="text-content">
                   <h4 className="mt-4 ms-2 text-capitalize ">car owners</h4>
                   <p className="m-2 mt-3 mb-3">
@@ -30,7 +31,7 @@ const Howitworks = () => {
             <div className=" position-relative  col-md-4  col-sm-6 w-25 p-0">
               <div className="number nbox anmi2 p-2 mb-4">2</div>
               <div className="box">
-                <img className="img-fluid " src={gallary4} alt="" />
+                <img className="img-fluid " src={pf + "Home/gallery-04.jpg"} alt="" />
                 <div className="text-content">
                   <h4 className="mt-4 ms-2 text-capitalize"> riders</h4>
                   <p className="m-2 mt-3 mb-3">
@@ -43,7 +44,7 @@ const Howitworks = () => {
             <div className="position-relative  col-md-4 col-sm-6 w-25 p-0">
               <div className="number nbox anmi3 mb-4 p-2 ">3</div>
               <div className="box">
-                <img className="img-fluid " src={gallary5} alt="" />
+                <img className="img-fluid " src={pf + "Home/gallery-05.jpg"} alt="" />
                 <div className="text-content">
                   <h4 className="mt-4 ms-2 text-capitalize">
                     split cost,save money

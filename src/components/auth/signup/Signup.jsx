@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import signupImg from "../../assets/add-friend.png"
+// import signupImg from "pf +"add-friend.png"
 export default function Signup() {
+  const pf = process.env.REACT_APP_PUBLIC_FOLDER;
   const [user, setUser] = useState({
       email: "",
       password: "",
@@ -23,7 +24,7 @@ export default function Signup() {
     <React.Fragment>
     <div className="form login justify-content-center align-items-center mt-5 " >
       <div className="text-center userprofile d-flex justify-content-center d-sm-none d-md-block">
-        <img src={signupImg} alt="" className="img-fluid" />
+        <img src={pf +"add-friend.png"} alt="" className="img-fluid" />
       </div>
       <h2 className="fw-bold display-6 text-center my-2">Sign Up</h2>
       <form>

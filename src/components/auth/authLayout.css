@@ -7,7 +7,7 @@ body{
 }
 
 .auth{
-    background-image: url("../../assets/women2_car.jpg");
+    background-image: url("http://localhost:3000/assets/women2_car.jpg");
     background-size: cover;
     /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
     min-height: 100%;

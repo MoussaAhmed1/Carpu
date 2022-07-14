@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import "./Login.css";
-import userImg from "../../assets/man.png";
+// import userImg from "pf +"man.png";
 import { Link } from 'react-router-dom';
 export default function Login() {
+  const pf = process.env.REACT_APP_PUBLIC_FOLDER;
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -19,7 +20,7 @@ export default function Login() {
     <React.Fragment>
       <div className="form login justify-content-center align-items-center mt-5">
         <div className="text-center userprofile d-flex justify-content-center d-xs-none d-md-block">
-          <img src={userImg} alt="" className="img-fluid" />
+          <img src={pf +"man.png"} alt="" className="img-fluid" />
         </div>
         <h2 className="fw-bold display-6 text-center my-2">Log in</h2>
         <form>

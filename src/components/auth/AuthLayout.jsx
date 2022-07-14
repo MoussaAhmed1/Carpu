@@ -1,10 +1,8 @@
 import React from "react";
-import Login from "../login/Login";
-import Signup from "../signup/Signup";
-import "./authLayout.css";
-import yellowCar from "../../assets/car.png";
-import googleMap from  "../../assets/google-maps.png";
-import dots from "../../assets/dots.png"
+import './authLayout.css'
+// import yellowCar from "pf+ "car.png";
+// import googleMap from  "pf+ "google-maps.png";
+// import dots from "pf+ "dots.png"
 
 import {
   BrowserRouter as Router,
@@ -12,8 +10,12 @@ import {
   Route,
 } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Login from './login/Login';
+import Signup from './signup/Signup';
+
 
 const AuhtLayout = () => {
+  const pf = process.env.REACT_APP_PUBLIC_FOLDER;
   // let history = useHistory();
   let location = useLocation();
   // console.log(history);
@@ -27,7 +29,7 @@ const AuhtLayout = () => {
             {/* <div className="shape  shape1"></div> */}
             {/* <div className="shape shape2"></div> */}
             <div className="auth">
-              <img src={dots} alt=" dots" className="dots"/>
+              <img src={pf+ "dots.png"} alt=" dots" className="dots"/>
               <div className="overlay d-flex justify-content-center align-items-end">
               {/* <h1 className="display-5 text-center p-3 lead text-light fw-bold ">the best place to find people going to your distiny</h1> */}
               <h1 className="display-5 text-center p-3 lead text-light fw-bold ">the best place to connecting people in the same direction</h1>
@@ -38,8 +40,8 @@ const AuhtLayout = () => {
           <div className="Login rightSide col-md-6 bg-light">
           <div className="circle d-md-block d-sm-none">
           <div className="innerCircle">
-            <img src={yellowCar} alt="yellowCar" className="yellowCar icon" />
-            <img src={googleMap} alt="googleMap" className="googleMap icon" />
+            <img src={pf+ "car.png"} alt="yellowCar" className="yellowCar icon" />
+            <img src={pf+ "google-maps.png"} alt="googleMap" className="googleMap icon" />
           </div>
           </div>
           {/* <div className="header my-3">

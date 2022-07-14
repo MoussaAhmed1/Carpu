@@ -1,5 +1,4 @@
 import "./App.css";
-import AuthLayout from "./components/auth/AuthLayout";
 import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Error404 from "./components/Error404/Error404";
@@ -10,6 +9,7 @@ import Footer from "./components/footer/Footer";
 import ProfileView from './components/profile/profileView/ProfileView';
 import ProfileSettings from './components/profile/ProfileSettings/ProfileSettings';
 import FindRides from "./components/Find_rides/FindRides";
+import AuthLayout from './components/auth/AuthLayout'
 function App() {
   return (
     <React.Fragment>

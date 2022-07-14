@@ -1,11 +1,13 @@
 import React from "react";
 import "./Profile.css";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import { Rating } from "@mui/material";
 // import {styleMaker} from "@mui/material"
 // import ReactTimeAgo from 'react-time-ago'
+import ProgressBar from "react-bootstrap/ProgressBar";
 export default function ProfileView() {
   // let date = "Monday, 11 July 2022 18:22:13 GMT+02:00"
+  const profileComplation = 60;
   return (
     <div classNameName="container">
       <div className="main-body">
@@ -25,7 +27,16 @@ export default function ProfileView() {
                     <Button variant="contained">follow</Button>
                     {/* <p className="text-secondary mb-1"> Last seen: <ReactTimeAgo date={date} locale="en-US"/></p> */}
                     <p className="text-muted font-size-sm">LUXOR , ESNA</p>
-                    <Rating name="read-only" value={3.5} readOnly precision={0.5} />
+                    <Rating
+                      name="read-only"
+                      value={3.5}
+                      readOnly
+                      precision={0.5}
+                    />
+                    <ProgressBar
+                      now={profileComplation}
+                      label={`your profile ${profileComplation}%`}
+                    />
                   </div>
                 </div>
               </div>

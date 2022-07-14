@@ -1,8 +1,7 @@
-import pngegg2 from "../../assets/Home/pngegg (2).png";
-import pngegg1 from "../../assets/Home/blob.svg";
 import React from 'react'
 import { Link } from 'react-router-dom';
 const Landing = () => {
+  const pf = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <React.Fragment>
       {/* <!-- start landing--> */}
@@ -29,12 +28,12 @@ const Landing = () => {
               <div className="image position-relative w-100">
                 <img
                   className="below img-fluid position-relative  "
-                  src={pngegg1}
+                  src={pf + "Home/blob.svg"}
                   alt=""
                 />
                 <img
                   className="over img-fluid mx-auto d-block position-absolute top-50 start-50 translate-middle"
-                  src={pngegg2}
+                  src={pf + "Home/pngegg (2).png"}
                   alt=""
                 />
               </div>

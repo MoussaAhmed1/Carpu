@@ -1,9 +1,9 @@
 import "./Features.css";
-import Blob1 from "../../assets/Home/blob (1).svg";
-import Blob2 from "../../assets/Home/blob (2).svg";
-import Blob3 from "../../assets/Home/blob (3).svg";
+// import pf + "Home/blob (1).svg" from "pf + "Home/blob (1).svg";
+// import Blob2 from "pf + "Home/blob (2).svg";
+// import Blob3 from "pf + "Home/blob (3).svg";
 import React, { Component } from "react";
-
+const pf = process.env.REACT_APP_PUBLIC_FOLDER;
 const Features = () => {
   return (
     <React.Fragment>
@@ -21,7 +21,7 @@ const Features = () => {
               <div className="feature-content position-relative ">
                 <img
                   className=" position-relative img-fluid  "
-                  src={Blob1}
+                  src={pf + "Home/blob (2).svg"}
                   alt=""
                 />
                 <i className="fas fa-hand-holding-dollar fa-5x position-absolute top-50 start-50 translate-middle "></i>
@@ -41,7 +41,7 @@ const Features = () => {
               <div className="feature-content position-relative">
                 <img
                   className="position-relative img-fluid"
-                  src={Blob2}
+                  src={pf + "Home/blob (3).svg"}
                   alt=""
                 />
                 <i className=" fas fa-solid fa-award fa-5x position-absolute top-50 start-50 translate-middle "></i>
@@ -61,7 +61,7 @@ const Features = () => {
               <div className="feature-content position-relative">
                 <img
                   className="position-relative img-fluid"
-                  src={Blob3}
+                  src={pf + "Home/blob (3).svg"}
                   alt=""
                 />
                 <i className=" fas fa-solid fa-handshake fa-5x position-absolute top-50 start-50 translate-middle"></i>
