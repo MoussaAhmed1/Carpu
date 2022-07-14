@@ -9,6 +9,7 @@ import CreateRides from './components/Create_rides/CreateRides';
 import Footer from "./components/footer/Footer";
 import ProfileView from './components/profile/profileView/ProfileView';
 import ProfileSettings from './components/profile/ProfileSettings/ProfileSettings';
+import FindRides from "./components/Find_rides/FindRides";
 function App() {
   return (
     <React.Fragment>
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/createRides" exact>
             <CreateRides />
+          </Route>
+          <Route path="/FindRides" exact>
+            <FindRides />
           </Route>
           <Route path="/authLayout/login" exact>
             <AuthLayout />

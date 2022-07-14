@@ -7,7 +7,7 @@ export default function RadioButton({
 }) {
   return (
     <div
-      className={`btn-group  ${name} d-block my-3`}
+      className={`btn-group  ${name} d-block my-1`}
       role="group"
       aria-label="Basic radio toggle button group"
     >

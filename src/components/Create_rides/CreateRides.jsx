@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import './CreateRide.css'
 import RadioButton from "../layout/RadioButton";
-
+import { useHistory } from "react-router-dom";
+import MyCalendar from "../layout/Date_Time/MyCalender";
+import GoogleMaps from "../layout/googleMaps/GoogleMaps"; 
 export default function CreateRides() {
   const [ride, setRide] = useState({
     from: "",
@@ -11,8 +14,11 @@ export default function CreateRides() {
     smoking: "",
     pet: "",
     seats:"",
-    cost:"",
-    dateOfBirth: new Date(),
+    payment:"",
+    fare:"",
+    date:new Date(),
+    time:null,
+    created: new Date(),
     // htmlFormatDate(props.date)
   });
   //   const [err, setErr] = useState({});
@@ -24,14 +30,71 @@ export default function CreateRides() {
     });
   };
 
+  let history = useHistory();
   const handelcancel = ()=>{
     console.log("cancel");
+    history.push("/");
+  }
+  const handelDate = (date) => {
+    setRide({
+      ...ride,
+      "date":date})
+  }
+  
+   const handelSubmit = (event)=>{
+    event.preventDefault();
+    console.log(ride);
+   }
+   const handelFrom = (from) => {
+    setRide({
+      ...ride,
+      "from":from})
+  }
+   const handelTo = (to) => {
+    setRide({
+      ...ride,
+      "to":to})
   }
 
   return (
-    <>
+
+    <div className="map">
+   <GoogleMaps handelFrom={handelFrom} handelTo={handelTo} from={ride.from} to={ride.to}/>  
+    <section className="form1 rounded bg-light justfy-content-center">
       <h1>Offer a ride</h1>
-      <form action="" onSubmit={()=>(console.log(ride))}>        
+      <form action="" onSubmit={handelSubmit}> 
+      {/* <input
+          type="text"
+          className="form-control my-1"
+          placeholder="From"
+          aria-label="Example text with button addon"
+          aria-describedby="button-addon1"
+          onChange={handelInput}
+          name="from"
+          value={ride.from}
+        />       
+      <input
+          type="text"
+          className="form-control my-1"
+          placeholder="To"
+          aria-label="Example text with button addon"
+          aria-describedby="button-addon1"
+          onChange={handelInput}
+          name="to"
+          value={ride.to}
+        />  */}
+        <hr />
+        <h3>{"Date & time"}</h3>
+        <MyCalendar  date={ride.date} handelDate={handelDate} /> 
+        <input type="time" name="time" id="time"
+        className="form-control my-1"
+        placeholder="To"
+        aria-label="Example text with button addon"
+        aria-describedby="button-addon1"
+        onChange={handelInput}
+        value={ride.time} />
+        <hr />
+        <h3>Features</h3>    
       <RadioButton
         handelRadio={handelInput}
         name="gender"
@@ -45,60 +108,60 @@ export default function CreateRides() {
       <RadioButton
         handelRadio={handelInput}
         name="air_condition"
-        radios={["air-condition", "no-air-condition", "any"]}
+        radios={["air-condition", "no-AC", "any"]}
       />
       <RadioButton
         handelRadio={handelInput}
-        name="Pet"
+        name="pet"
         radios={["pet", "no-pet", "any"]}
       />
       <RadioButton
         handelRadio={handelInput}
-        name="Cash"
+        name="payment"
         radios={["Cash", "card", "any"]}
       />
       <div class="input-group mb-3 seats">
-        <button
+        <i
           className="btn btn-outline-primary"
           type="button"
           id="button-addon1"
         >
           <i className="fa fa-car"></i>
-        </button>
+        </i>
         <input
           type="number"
           className="form-control"
           placeholder="Available seats"
-          aria-label="Example text with button addon"
-          aria-describedby="button-addon1"
           onChange={handelInput}
           name="seats"
           value={ride.seats}
         />
       </div>
-      <div className="input-group mb-3 cost">
-        <button
+      <div className="input-group mb-3 fare">
+        <i
           className="btn btn-outline-primary"
           type="button"
           id="button-addon1"
         >
           
           <i className="fa-solid fa-money-check-dollar"></i>
-        </button>
+        </i>
         <input
           type="number"
           className="form-control"
-          placeholder="25 EGP/Seat"
+          placeholder="fare/Seat"
           aria-label="Example text with button addon"
           aria-describedby="button-addon1"
           onChange={handelInput}
-          name="cost"
-          value={ride.cost}
+          name="fare"
+          value={ride.fare}
         />
       </div>
      <input type="submit" value="submit" className="btn btn-lg btn-primary mx-2"/> 
      <input type="reset" value="cancel" className="btn btn-lg btn-outline-primary mx-2"onClick={handelcancel} /> 
       </form>
-    </>
+    </section>
+      </div>
+    
   );
 }

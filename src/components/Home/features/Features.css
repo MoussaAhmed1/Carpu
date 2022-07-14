@@ -1,0 +1,36 @@
+/* start features */
+.features .row i{
+    color: white;
+}
+.features .row .text h4{
+color: var(--main-header);
+}
+.features .row .text p{
+    color: var(--main-paragraph);
+}
+
+.features{
+    position: relative;
+    top: -3em;
+    height: 18em;
+}
+.features .feature-content {
+    width: 11em;
+    margin: auto;
+}
+.features .box {
+    position: relative;
+    background: #fff;
+    top: -8px;
+    margin: 4px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    height: 351px;
+    transition: 0.3s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.features .row .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 15px 15px 15px rgb(0 0 0 / 20%);
+  }
+/* end features */

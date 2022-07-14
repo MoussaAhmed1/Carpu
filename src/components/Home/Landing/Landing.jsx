@@ -21,7 +21,7 @@ const Landing = () => {
                 </h5>
                 <div className="buttons">
                   <Link to="/CreateRides" className="btn btn-lg btn-success mx-2">offer a ride</Link>
-                  <Link to="/CreateRides" className="btn btn-lg btn-outline-success mx-2 color-light "><span className="">find a ride</span></Link>
+                  <Link to="/FindRides" className="btn btn-lg btn-outline-success mx-2 color-light "><span className="">find a ride</span></Link>
                 </div>
               </div>
             </div>
