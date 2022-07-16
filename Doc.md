@@ -78,6 +78,6 @@
 
 ## Logs
 
-- [ ] Authentication
+- [x] Authentication
 - [ ] User profile
 - [ ] User Notifications
