@@ -1,6 +1,6 @@
 import "./Nav.css";
 import { Link } from "react-router-dom";
-import React  from "react";
+import React from "react";
 const Nav = () => {
   return (
     <React.Fragment>
@@ -36,14 +36,14 @@ const Nav = () => {
 
               <li className="nav-item">
                 <Link className="nav-link" to="#User_Reviews">
-                <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>3</span>
-                <i class="fa-regular  fa-lg fa-envelope"></i>
+                  <span className="messages badge badge-pill badge-info" style={{ float: "right", marginBottom: "-10px" }}>3</span>
+                  <i class="fa-regular  fa-lg fa-envelope"></i>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="#User_Reviews">
-                <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>1</span>
-                <span class="fa-regular  fa-lg fa-bell"></span>
+                  <span className="messages badge badge-pill badge-info" style={{ float: "right", marginBottom: "-10px" }}>1</span>
+                  <span class="fa-regular  fa-lg fa-bell"></span>
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -55,7 +55,7 @@ const Nav = () => {
                   aria-expanded="false"
                 >
                   <span className="fa fa-lg fa-regular fa-circle-user"></span>
-                  
+
                 </Link>
                 <ul
                   className="dropdown-menu"
@@ -65,13 +65,13 @@ const Nav = () => {
                     <Link className="dropdown-item" to="/profile/10">
                       My Profile
                     </Link>
-                    
+
                   </li>
                   <li className="nav-item">
                     <Link className="dropdown-item" to="/ProfileSetting/10">
                       Edit Profile
                     </Link>
-                    
+
                   </li>
                   <hr />
                   <li>
@@ -81,12 +81,12 @@ const Nav = () => {
                   </li>
                   <li>
                     <Link className="dropdown-item" to="/authLayout/Sign-up">
-                      Sign in
+                      Sign up
                     </Link>
                   </li>
                   <li>
                     <Link className="dropdown-item" to="">
-                     Log-out
+                      Log-out
                     </Link>
                   </li>
                 </ul>
