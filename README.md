@@ -8,13 +8,15 @@ Brief intro about the project
 
 ## Project Structure
 
-generate the strucutre by any tool
+Head over to [Documentation.md](./Doc.md)
 
 ## Demo or Screenshots
 
-of the major things like authentication and so on
+**Authentication (Login/Signup)**
 
-## Technologies and Depenedecies
+**Pooling a car**
+
+**User profile and notifications**
 
 ## Installing and Setup
 
@@ -24,9 +26,3 @@ of the major things like authentication and so on
 - show screenshots of running tests
 
 ## Contributors
-
-## Logs
-
-- [ ] Authentication
-- [ ] User profile
-- [ ] User Notifications
