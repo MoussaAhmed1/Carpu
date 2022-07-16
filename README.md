@@ -10,7 +10,7 @@ Brief intro about the project
 
 Head over to [Documentation.md](./Doc.md)
 
-## Demo or Screenshots
+## Demo and Features
 
 **Authentication (Login/Signup)**
 
