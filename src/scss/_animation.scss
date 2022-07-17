@@ -1,0 +1,62 @@
+@keyframes right-move {
+    50%{
+      right:0;
+      height: 15px;
+    }
+    100%{
+      right: 0;
+      width:50%;
+      height: 100%;
+      border-radius:0;
+     // border-left: 1px solid #000;
+    }
+  }
+  @keyframes left-move {
+  50%{
+    left:0;
+    width: 15px;
+    height: 15px;
+  }
+  100%{
+    left: 0;
+    width:50%;
+    height: 100%;
+    border-radius:0;
+   // border-right: 1px solid #000;
+  }
+  }
+  @keyframes move-arrowt  {
+    100%{
+      transform: translateX(15px);
+    }
+    
+  }
+  @keyframes light {
+   0%,50%{
+     opacity: 1;
+   }
+   100%{
+    opacity: 0;
+    width: 150%;
+    height: 150%;
+   }
+    
+  }
+  
+  @keyframes change-background {
+
+    0% ,100%{
+      background-image: url("../imgs/discount-background1.jpg");
+    }
+    50%{
+      background-image: url("../imgs/discount-background2.jpg");
+    }
+  }
+  @keyframes hart{
+    0% ,100% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(2);
+    }
+  }

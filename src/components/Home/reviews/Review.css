@@ -1,0 +1,81 @@
+.Reviews .container .row .card {
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    cursor: pointer
+}
+
+.container .row .card .card-body {
+    padding: 1rem 1.2rem;
+    color: rgb(0, 0, 0)
+}
+
+.container .row .card .card-body .card-img img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    transform: translateY(50px);
+    transition: 0.5s;
+    border-radius: 50%
+}
+
+.container .row .card .card-body .name {
+    transform: translateY(50px);
+    transition: 0.5s
+}
+
+.container .row .card .card-body .testimonial {
+    font-size: 0.9rem;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: 0.5s;
+    opacity: 0
+}
+
+.container .row .card:hover .card-body .testimonial,
+.container .row .card:hover .card-body .name,
+.container .row .card:hover .card-body .card-img img {
+    transform: translateY(0px);
+    opacity: 1
+}
+
+@media(max-width: 991.5px) {
+    .Reviews::after {
+        clip-path: circle(40% at 10% 50%)
+    }
+
+    .Reviews::before {
+        clip-path: circle(50% at right -10%)
+    }
+}
+
+.Reviews .Reviews::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1900px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2d2dff, #ff2f2f);
+    clip-path: circle(25% at right)
+}
+
+.Reviews::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2000px;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(#870aec, #6e0b81);
+    clip-path: circle(20% at 10% 10%);
+}
+/* end reviews */

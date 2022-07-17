@@ -33,9 +33,10 @@ export default function ProfileView() {
                       readOnly
                       precision={0.5}
                     />
+                    <p> your profile</p>
                     <ProgressBar
                       now={profileComplation}
-                      label={`your profile ${profileComplation}%`}
+                      label={`${profileComplation}% completed`}
                     />
                   </div>
                 </div>

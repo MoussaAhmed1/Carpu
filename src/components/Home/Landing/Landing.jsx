@@ -33,7 +33,7 @@ const Landing = () => {
                 />
                 <img
                   className="over img-fluid mx-auto d-block position-absolute top-50 start-50 translate-middle"
-                  src={pf + "Home/pngegg (2).png"}
+                  src={pf + "Home/pngegg.png"}
                   alt=""
                 />
               </div>

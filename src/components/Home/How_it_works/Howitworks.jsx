@@ -1,6 +1,7 @@
 // import pf + "Home/gallery-03.jpg" from "pf + "Home/gallery-03.jpg";
 // import gallary4 from "pf + "Home/gallery-04.png";
 // import gallary5 from "pf + "Home/gallery-05.jpg";
+import './How_it_works.css'
 import React from 'react'
 const Howitworks = () => {
   const pf = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -31,7 +32,7 @@ const Howitworks = () => {
             <div className=" position-relative  col-md-4  col-sm-6 w-25 p-0">
               <div className="number nbox anmi2 p-2 mb-4">2</div>
               <div className="box">
-                <img className="img-fluid " src={pf + "Home/gallery-04.jpg"} alt="" />
+                <img className="img-fluid " src={pf + "Home/gallery-04.png"} alt="" />
                 <div className="text-content">
                   <h4 className="mt-4 ms-2 text-capitalize"> riders</h4>
                   <p className="m-2 mt-3 mb-3">

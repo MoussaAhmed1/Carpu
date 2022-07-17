@@ -2,12 +2,14 @@ import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import signupImg from "pf +"add-friend.png"
+import axios from 'axios';
+
 export default function Signup() {
   const pf = process.env.REACT_APP_PUBLIC_FOLDER;
   const [user, setUser] = useState({
       email: "",
       password: "",
-      fullName:"",
+      username:"",
       phone:"",
       male:true,
       dateOfBirth:new Date(),
@@ -20,6 +22,17 @@ export default function Signup() {
         [e.target.name]: e.target.value,
       });
     };
+
+    const onSubmit = (event) =>{
+      event.preventDefault()
+      
+      const registered = user
+       axios.post("http://localhost:5000/api/signup", registered)
+          .then(res => console.log(res.data))
+
+      
+      }
+
   return (
     <React.Fragment>
     <div className="form login justify-content-center align-items-center mt-5 " >
@@ -27,19 +40,19 @@ export default function Signup() {
         <img src={pf +"add-friend.png"} alt="" className="img-fluid" />
       </div>
       <h2 className="fw-bold display-6 text-center my-2">Sign Up</h2>
-      <form>
+      <form onSubmit={(e)=>onSubmit(e)}>
       <label htmlFor="FullName">Full Name</label>
         <div className="input-group mb-3">
          
           <input
             type="text"
-            name="fullName"
+            name="username"
             className="form-control"
-            placeholder="Full Name"
-            aria-label="FullName"
-            aria-describedby="FullName"
+            placeholder="username"
+            aria-label="username"
+            aria-describedby="username"
             onChange={(e) => handelInput(e)}
-            value={user.fullName}
+            value={user.username}
             autoComplete="false"
           />
            <span className="input-group-text lead" id="FullName">
@@ -90,7 +103,7 @@ export default function Signup() {
             <span className="text-light lead my-4">Sign up</span> 
            
           </button>
-        <p className="lead ">Already have an account? <Link to="/authLayout/Login">Login</Link>
+        <p className="lead ">Already have an account? <Link to="/Login">Login</Link>
               </p>
         </div>
       </form>

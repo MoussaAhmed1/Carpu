@@ -19,7 +19,7 @@
 
 .form {
   margin: 10% 15%;
-  padding: 6%;
+  padding: 5%;
   border: solid 1px #cdc9c9;
   min-width: 50%;
   border-radius: 1%;
@@ -27,12 +27,13 @@
   margin-bottom: 5px;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
   box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px, rgb(255 255 255 / 80%) -6px -2px 16px 0px;
-  margin: auto;
-  min-width: 30%;
-  max-width: 66%;
-  /* padding-bottom: 30px; */
+  margin: 18px auto;
+  min-width: 26%;
+  max-width: 37%;
+  padding-bottom: 30px;
   position: relative;
   z-index: 3;
+  max-height: -6%;
   background: #fff;
 }
 .form button {
@@ -41,29 +42,32 @@
 }
 
 .form .userprofile {
-    padding: 0.3em;
-    width: 20%;
-    position: absolute;
-    top: -1.8em;
-    margin: auto;
-    margin-bottom: -16em;
-    text-align: center;
-    background: #fff;
-    border-radius: 50px;
-    border: 0.5px solid #fff;
-    margin: auto;
-    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-    margin-bottom: -4em;
-    left: 40%;
-    border-radius: 53%;
-
-  }
+  /* padding: 0.3em; */
+  width: 20%;
+  position: absolute;
+  top: -3.8em;
+  margin: auto;
+  margin-bottom: -16em;
+  text-align: center;
+  background: #fff;
+  border-radius: 50px;
+  border: 0.5px solid #fff;
+  /* margin: auto; */
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  margin-bottom: -4em;
+  /* left: 40%; */
+  border-radius: 53%;
+  position: relative;
+  /* padding-left: 25px; */
+  cursor: pointer;
+  display: block;
+}
   .input-group {
  
     border-bottom: 1px solid #444;
 }
 
-.Login .login-btn {
+.form .login-btn {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
 }
@@ -79,4 +83,65 @@
 .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu), .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3) {
 
   border: none;
+}
+#div2{
+  width: 150px;
+  height: 150px;
+  border: 3px solid #05ffb0;
+  border-radius: 50%;
+  padding: 20px;
+  text-align: center;
+}
+.circle {
+  background-color: none;
+  border: 3.5em solid #4bb7d5;
+  height: 29em;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 29em;
+  position: absolute;
+  right: -19em;
+  z-index: 1;
+  top: 8.2em;
+  
+}
+
+.innerCircle {
+  background-color: none;
+  border: 4px dashed #000;
+  height: 27em;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 29em;
+  position: absolute;
+  right: -5em;
+  z-index: 1;
+  top: -3em;
+}
+
+.header{
+  z-index: 6;
+}
+
+.icon{
+  width: 4.5em;
+  position: relative;
+}
+.googleMap {
+  width: 3.5em;
+  top: 20em;
+}
+.yellowCar {
+  width: 4.7em;
+  position: relative;
+  left: 4em;
+  transform: rotate(54deg);
+}
+.dots {
+  position: absolute;
+  bottom: 0;
+  right: -4em;
+  width: 8em;
 }

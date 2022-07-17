@@ -10,7 +10,6 @@ import {
 } from '@chakra-ui/react';
 
 import {FaLocationArrow, FaTimes } from 'react-icons/fa'
-
 import {
   useJsApiLoader,
   GoogleMap,
@@ -19,11 +18,16 @@ import {
   DirectionsRenderer,
 } from '@react-google-maps/api'
 import { useRef, useState } from 'react'
-import PlacesAutocomplete from './PlacesAutoComplete';
-
+// import usePlacesAutocomplete, {
+//   getGeocode,
+//   getLatLng,
+// } from "use-places-autocomplete";
 const center = { lat: 30.472876 , lng: 30.926498 }
 
-function GoogleMaps({handelTo,handelFrom}) {
+function GoogleMaps({handelTo,handelFrom,setDistance,setDuration,distance,duration,setDuration_Distance}) {
+
+
+
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: "AIzaSyB-HGfNuvKBsRd8DNnzDLb_9xg9xc38rkg",
     libraries: ['places'],
@@ -31,9 +35,7 @@ function GoogleMaps({handelTo,handelFrom}) {
 
   const [map, setMap] = useState(/** @type google.maps.Map */ (null))
   const [directionsResponse, setDirectionsResponse] = useState(null)
-  const [distance, setDistance] = useState('')
-  const [duration, setDuration] = useState('')
-  const [selected, setSelected] = useState(null);
+  // const [selected, setSelected] = useState(null);
 
   /** @type React.MutableRefObject<HTMLInputElement> */
   const originRef = useRef("")
@@ -57,8 +59,10 @@ function GoogleMaps({handelTo,handelFrom}) {
       travelMode: google.maps.TravelMode.DRIVING,
     })
     setDirectionsResponse(results)
-    setDistance(results.routes[0].legs[0].distance.text)
-    setDuration(results.routes[0].legs[0].duration.text)
+    const duration =  results.routes[0].legs[0].duration.text
+    const distance =  results.routes[0].legs[0].distance.text
+    setDuration_Distance(duration,distance)
+     
   }
 
   function clearRoute() {
@@ -68,9 +72,7 @@ function GoogleMaps({handelTo,handelFrom}) {
     originRef.current.value = ''
     destiantionRef.current.value = ''
   }
-let handelSelect = (e)=> {
-  console.log(e.target.value)
-}
+
   return (
     <Flex
       position='relative'
@@ -108,19 +110,19 @@ let handelSelect = (e)=> {
         minW='container.md'
         zIndex='1'
       >
-        <HStack spacing={2} justifyContent='space-between' >
+        <HStack spacing={5} justifyContent='space-between' >
           <Box flexGrow={1} >
             <Autocomplete >
-              <Input type='text' placeholder='Origin' ref={originRef} value={originRef.current.value}
+              <Input  type='text' placeholder='Origin' ref={originRef} value={originRef.current.value}
                 onChange={(e)=>handelFrom(e.target.value)}
-                
+                onSelect={(e)=>handelFrom(e.target.value)}
                 />
             </Autocomplete>
 
 
-            <div className="places-container">
+            {/* <div className="places-container">
         <PlacesAutocomplete setSelected={setSelected} handelFrom={handelFrom} />
-      </div>
+      </div> */}
           </Box>
           <Box flexGrow={1}>
             <Autocomplete >
@@ -130,7 +132,7 @@ let handelSelect = (e)=> {
                 ref={destiantionRef}
                 value={destiantionRef.current.value}
                 onChange={(e)=>handelTo(e.target.value)}
-                onSelect={handelSelect}
+                onSelect={(e)=>handelTo(e.target.value)}
               />
             </Autocomplete>
           </Box>
@@ -146,9 +148,9 @@ let handelSelect = (e)=> {
             />
           </ButtonGroup>
         </HStack>
-        <HStack spacing={4} mt={4} justifyContent='space-between'>
-          <Text>Distance: {distance} </Text>
-          <Text>Duration: {duration} </Text>
+        <HStack spacing={4} mt={5} justifyContent='space-between'>
+          <h6 className='text-primary my-2'>Distance: {distance} </h6>
+          <h6 className='text-primary my-2'>Duration: {duration} </h6>
           <IconButton
             aria-label='center back'
             icon={<FaLocationArrow />}

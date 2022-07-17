@@ -1,5 +1,6 @@
 import React from "react";
 import ReviewBox from "./ReviewBox";
+import './Review.css'
 import { useState } from "react";
 // import pf + "Home/ali.jpg" from "pf + "Home/ali.jpg";
 // import MousaImg from "pf + "Home/mousa.jpg";

@@ -21,7 +21,7 @@ const Features = () => {
               <div className="feature-content position-relative ">
                 <img
                   className=" position-relative img-fluid  "
-                  src={pf + "Home/blob (2).svg"}
+                  src={pf + "Home/blob2.svg"}
                   alt=""
                 />
                 <i className="fas fa-hand-holding-dollar fa-5x position-absolute top-50 start-50 translate-middle "></i>
@@ -41,7 +41,7 @@ const Features = () => {
               <div className="feature-content position-relative">
                 <img
                   className="position-relative img-fluid"
-                  src={pf + "Home/blob (3).svg"}
+                  src={pf + "Home/blob3.svg"}
                   alt=""
                 />
                 <i className=" fas fa-solid fa-award fa-5x position-absolute top-50 start-50 translate-middle "></i>
@@ -61,7 +61,7 @@ const Features = () => {
               <div className="feature-content position-relative">
                 <img
                   className="position-relative img-fluid"
-                  src={pf + "Home/blob (3).svg"}
+                  src={pf + "Home/blob3.svg"}
                   alt=""
                 />
                 <i className=" fas fa-solid fa-handshake fa-5x position-absolute top-50 start-50 translate-middle"></i>

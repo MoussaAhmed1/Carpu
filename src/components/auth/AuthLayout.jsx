@@ -3,15 +3,8 @@ import './authLayout.css'
 // import yellowCar from "pf+ "car.png";
 // import googleMap from  "pf+ "google-maps.png";
 // import dots from "pf+ "dots.png"
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import Login from './login/Login';
-import Signup from './signup/Signup';
+
 
 
 const AuhtLayout = () => {
@@ -20,9 +13,7 @@ const AuhtLayout = () => {
   let location = useLocation();
   // console.log(history);
   console.log(location.pathname);
-  
   return (
-    <Router>
       <section className="authSection">
         <div className="row justify-content-center">
           <div className="auth-background bg-light col-md-6 bg-info ">
@@ -53,14 +44,10 @@ const AuhtLayout = () => {
           </div>
         </div>
       </div> */}
-            <Switch>
-              <Route path="/authLayout/Login" exact component={Login} />
-              <Route path="/authLayout/Sign-up" exact component={Signup} />
-            </Switch>
-          </div>
+            
+        </div>
         </div>
       </section>
-    </Router>
   );
 }
  

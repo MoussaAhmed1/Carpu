@@ -75,13 +75,13 @@ const Nav = () => {
                   </li>
                   <hr />
                   <li>
-                    <Link className="dropdown-item" to="/authLayout/login">
-                      Log in
+                    <Link className="dropdown-item" to="/Login">
+                      Log in 
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/authLayout/Sign-up">
-                      Sign in
+                    <Link className="dropdown-item" to="/Sign-up">
+                       Sign-up
                     </Link>
                   </li>
                   <li>

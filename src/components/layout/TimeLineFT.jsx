@@ -1,6 +1,6 @@
 import React from 'react'
 import {Timeline,TimelineItem,TimelineDot,TimelineSeparator,TimelineContent,TimelineConnector} from '@mui/lab'
-export default function TimeLineFT() {
+export default function TimeLineFT({from, to}) {
   return (
     <div>
       <Timeline>
@@ -9,13 +9,17 @@ export default function TimeLineFT() {
       <TimelineDot color="secondary" />
       <TimelineConnector />
     </TimelineSeparator>
-    {/* <TimelineContent>Alex</TimelineContent> */}
+    <TimelineContent>
+      {/* from
+      <br /> */}
+      {from}
+      </TimelineContent>
   </TimelineItem>
   <TimelineItem>
     <TimelineSeparator>
       <TimelineDot color="success" />
     </TimelineSeparator>
-    {/* <TimelineContent>Suez</TimelineContent> */}
+    <TimelineContent>{to}</TimelineContent>
   </TimelineItem>
 </Timeline>
     </div>
