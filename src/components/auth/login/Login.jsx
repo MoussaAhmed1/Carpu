@@ -23,7 +23,7 @@ export default function Login() {
   let history = useHistory();
   const login = async(event) => {
     event.preventDefault()
-    history.push("/profile/:id")
+    
     const registered = user
     console.log(registered)
      axios({
@@ -34,8 +34,7 @@ export default function Login() {
     }).then( (response) => {
       console.log(response)
       if (!response.ok) {
-        history.push("/")
-        
+        history.push("/profile/:id")       
   }
     else
     throw new Error(response.status_text);
