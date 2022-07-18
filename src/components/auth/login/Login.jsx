@@ -1,11 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import "./Login.css";
-// import userImg from "pf +"man.png";
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { useHistory } from "react-router-dom";
-
+import { loginCall } from "../../../apiCalls";
+import { AuthContext } from "../../../context/AuthContext";
 export default function Login() {
   const pf = process.env.REACT_APP_PUBLIC_FOLDER;
   const [user, setUser] = useState({
@@ -19,30 +18,16 @@ export default function Login() {
       [e.target.name]: e.target.value,
     });
   };
-  const registered = user
   let history = useHistory();
-  const login = async(event) => {
-    event.preventDefault()
-    
-    const registered = user
-    console.log(registered)
-     axios({
-      method: "POST",
-      data:registered,
-      withCredentials: true,
-      url: "http://localhost:5000/api/login",
-    }).then( (response) => {
-      console.log(response)
-      if (!response.ok) {
-        history.push("/profile/:id")       
-  }
-    else
-    throw new Error(response.status_text);
-}).catch(err => console.log(err));
+const { isFetching, dispatch } = useContext(AuthContext);
 
-
-  };
-  
+const login = (e) => {
+  e.preventDefault();
+  loginCall(
+     user ,
+    dispatch
+  );
+};
   return (
     <React.Fragment>
       <div className="form login justify-content-center align-items-center mt-5">

@@ -9,13 +9,7 @@
   overflow: hidden;
 }
 
-/*old*/
-.Login {
-  padding: 35px;
-  /* border: #0093E9 solid 1px; */
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  /* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); */
-}
+
 
 .form {
   margin: 10% 15%;

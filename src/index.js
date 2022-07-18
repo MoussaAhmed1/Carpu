@@ -13,12 +13,16 @@ import './index.css';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import {BrowserRouter as Router} from "react-router-dom";
 import { createRoot } from 'react-dom/client';
+import { AuthContextProvider } from "./context/AuthContext";
 const container = document.getElementById('root');
 const root = createRoot(container); 
 root.render(
   
   <Router>
+    <AuthContextProvider>
     <App tab="home" />
+
+    </AuthContextProvider>
   </Router>
  
 

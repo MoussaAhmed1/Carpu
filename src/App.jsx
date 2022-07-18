@@ -1,7 +1,7 @@
 import "./App.css";
 // import './scss/elzero.scss'
 import Home from "./components/Home/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Error404 from "./components/Error404/Error404";
 import Nav from "./components/Nav/Nav";
 import React from "react";
@@ -13,14 +13,23 @@ import FindRides from "./components/Find_rides/FindRides";
 import ViewRides from './components/Find_rides/ViewRides/ViewRides';
 import Login from './components/auth/login/Login';
 import Signup from './components/auth/signup/Signup';
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
+import RateDriver from './components/RateThedriver/RateDriver';
+import Notifications from './components/Notofications/Notifications';
 function App() {
+  const { user } = useContext(AuthContext);
   return (
     <React.Fragment>
       <Router>
-        <Nav/>
+        {
+            user &&
+            <Nav/>
+        }
+      
         <Switch>
           <Route path="/" exact>
-            <Home />
+          {user ? <Home /> : <Signup />}
           </Route>
           <Route path="/createRides" exact>
             <CreateRides />
@@ -32,23 +41,34 @@ function App() {
             <ViewRides />
           </Route>
           <Route path="/login" exact>
-            <Login/>
+          {user ? <Redirect to="/" /> : <Login />}
           </Route>
           <Route path="/Sign-up" exact>
-            <Signup/>
+          {user ? <Redirect to="/" /> : <Signup />}
           </Route>
-          <Route path="/profile/:id" exact>
+          <Route path="/Myprofile" exact>
             <ProfileView />
           </Route>
-          <Route path="/ProfileSetting/:id" exact>
+          <Route path="/ProfileSetting" exact>
             <ProfileSettings />
+          </Route>
+          <Route path="/rateThedriver/:id" exact>
+            <RateDriver />
+          </Route>
+          <Route path="/notification" exact>
+            <Notifications />
           </Route>
           <Route path="*">
             <Error404 />
           </Route>
         </Switch>
       </Router>
-      <Footer />
+      {
+            user &&
+            <Footer />
+        }
+      
+     
     </React.Fragment>
   );
 }

@@ -75,4 +75,12 @@ nav {
     border-radius: 050%;
     background: #ef1f1fd1;
 }
+.profileUserImg {
+    max-width: 53%;
+    margin-top: -6px;
+}
+.navbar .navbar-nav>li {
+    position: relative;
+    max-width: 5em;
+}
 /* end header*/

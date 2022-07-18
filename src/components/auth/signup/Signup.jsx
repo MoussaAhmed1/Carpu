@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 // import signupImg from "pf +"add-friend.png"
 import axios from 'axios';
 
@@ -22,19 +22,38 @@ export default function Signup() {
         [e.target.name]: e.target.value,
       });
     };
-
+    let history = useHistory();
     const onSubmit = (event) =>{
       event.preventDefault()
       
       const registered = user
        axios.post("http://localhost:5000/api/signup", registered)
-          .then(res => console.log(res.data))
-
+       .then( ({data}) => {
+       const {msg} = data;
+        console.log(data)
+        console.log(msg)
+        // if (data=="Successfully Authenticated") {
+        if (msg) {
+          history.push("/profile/:id") 
+    }
+      else
+      throw new Error("user Exist");
       
-      }
-
+      
+    }).catch(err => console.log("user Exist"));
+  }
   return (
     <React.Fragment>
+       <div className="Login rightSide col-md-6 bg-light">
+          <div className="circle d-md-block d-sm-none">
+          <div className="innerCircle">
+            <img src={pf+ "car.png"} alt="yellowCar" className="yellowCar icon" />
+            <img src={pf+ "google-maps.png"} alt="googleMap" className="googleMap icon" />
+          </div>
+          </div>
+         
+            
+        </div>
     <div className="form login justify-content-center align-items-center mt-5 " >
       <div className="text-center userprofile d-flex justify-content-center d-sm-none d-md-block">
         <img src={pf +"add-friend.png"} alt="" className="img-fluid" />

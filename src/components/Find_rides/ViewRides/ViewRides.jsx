@@ -3,7 +3,8 @@ import React from "react";
 import "./viewRide.css";
 // import TimeLineFT from '../../layout/TimeLineFT'
 // import { useState } from 'react';
-export default function ViewRides({ from = "suez", to = "Alex" }) {
+export default function ViewRides() {
+  const pf = process.env.REACT_APP_PUBLIC_FOLDER;
   const rides = [
     {
       passengers: [],
@@ -22,6 +23,8 @@ export default function ViewRides({ from = "suez", to = "Alex" }) {
       price: 0,
       user: "5ad7cf596149e8001401024d",
       distance: "15",
+      username:"Mahmoud Nasser",
+      profilepic:"nasser.jpg"
     },
     {
       passengers: ["5ad7cf596149e8001401024d"],
@@ -36,11 +39,13 @@ export default function ViewRides({ from = "suez", to = "Alex" }) {
       togeo: { lat: 44.0153371, lng: -73.16733999999997 },
       time: "15:00",
       date: "2018-05-24",
-      seats_avail: 0,
+      seats_avail: 3,
       notes: "",
       price: 0,
       user: "5ae521cb8ba7d20014d398e8",
       distance: "15",
+      username:"Mahmoud Nasser",
+      profilepic:"nasser.jpg"
     },
     {
       passengers: [],
@@ -56,9 +61,13 @@ export default function ViewRides({ from = "suez", to = "Alex" }) {
       date: "2018-05-01",
       seats_avail: 1,
       notes: "",
-      price: 0,
+      price: 50,
       user: "5adfe362110b0e00148845a8",
       distance: "15",
+      name:"Mahmoud Nasser",
+      profilepic:"nasser.jpg",
+      air_condition: "air_condition",
+      smoking: "no-smoking",
     },
     {
       passengers: [],
@@ -66,9 +75,9 @@ export default function ViewRides({ from = "suez", to = "Alex" }) {
       type: "offer",
       studentID: "",
       fulfilled: false,
-      from: "Middlebury College, Old Chapel Road, Middlebury, VT, USA",
+      from: "كلية الهندسة الإلكترونية جامعة المنوفية بمنوف، Madinet Menuf, Menouf, Egypt",
       fromgeo: { lat: 44.00825950000001, lng: -73.17731520000001 },
-      to: "Georgetown University, O Street Northwest, Washington, DC, USA",
+      to: "الماي، Al May, Shibin el Kom, Egypt",
       togeo: { lat: 38.9076089, lng: -77.07225849999998 },
       time: "14:00",
       date: "2018-06-21",
@@ -77,12 +86,19 @@ export default function ViewRides({ from = "suez", to = "Alex" }) {
       price: 30,
       user: "5ad7cf596149e8001401024d",
       distance: "15",
+      name:"Ali Mohamed",
+      profilepic:"ali.jpg",
+      air_condition: "air_condition",
+      smoking: "no-smoking",
+      gender: "men",
+      payment: "card",
+
     },
     {
       from: "",
       to: "",
-      gender: "",
-      air_condition: "",
+      gender: "men",
+      air_condition: "air_condition",
       smoking: "no-smoking",
       pet: "",
       seats: "",
@@ -92,7 +108,11 @@ export default function ViewRides({ from = "suez", to = "Alex" }) {
       time: null,
       created: "",
       distance: "15",
-      duration: "",
+      duration: "25 min",
+      name:"Moses Ahmed",
+      profilepic:"mousa.jpg",
+      air_condition: "air_condition",
+      smoking: "no-smoking",
     },
   ];
 
@@ -112,20 +132,21 @@ export default function ViewRides({ from = "suez", to = "Alex" }) {
                       <div className="row ">
                         <div className="col-4 d-flex">
                           <img
-                            className="profile-pic col-2"
-                            src="https://i.imgur.com/6tPhTUn.jpg"
+                            className="profile-pic col-2 mx-2"
+                            src={`${pf}${ride.profilepic}`}
                           />
-                          <h3 className="mt-2 font-weight-normal">Camilla Perez</h3>
+                          <h3 className="mt-2 font-weight-normal">{ride.name}</h3>
                         </div>
                         <div className="col-8 d-flex justify-content-end">
                           <h5 className="text-primary">{ride.price} EGP</h5>
                         </div>
                       </div>
                       <div className="row ">
+                        <div className="col-1"></div>
                         <div className="col-5">
                           <Rating name="read-only" value={3.5} readOnly precision={0.5} />
                         </div>
-                        <div className="col-7 d-flex justify-content-end ">
+                        <div className="col-6 d-flex justify-content-end ">
                           <h5 className="text-muted">
                             <i className="fa-solid fa-users-between-lines"></i>
                             {ride.seats_avail} Availble Seats
