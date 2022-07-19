@@ -29,7 +29,7 @@ function App() {
       
         <Switch>
           <Route path="/" exact>
-          {user ? <Home /> : <Signup />}
+          {user ? <Home /> : <Login />}
           </Route>
           <Route path="/createRides" exact>
             <CreateRides />
@@ -47,7 +47,8 @@ function App() {
           {user ? <Redirect to="/" /> : <Signup />}
           </Route>
           <Route path="/Myprofile" exact>
-            <ProfileView />
+          {user ?  <ProfileView /> :  <Login/>}
+           
           </Route>
           <Route path="/ProfileSetting" exact>
             <ProfileSettings />

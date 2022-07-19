@@ -95,6 +95,7 @@ export default function ViewRides() {
 
     },
     {
+      passengers: [],
       from: "",
       to: "",
       gender: "men",
@@ -144,7 +145,7 @@ export default function ViewRides() {
                       <div className="row ">
                         <div className="col-1"></div>
                         <div className="col-5">
-                          <Rating name="read-only" value={3.5} readOnly precision={0.5} />
+                          <Rating name="read-only" value={3.5} readOnly precision={0.5} style={{marginTop: "-2em"}} />
                         </div>
                         <div className="col-6 d-flex justify-content-end ">
                           <h5 className="text-muted">

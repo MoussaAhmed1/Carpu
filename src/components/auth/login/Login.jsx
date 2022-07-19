@@ -18,7 +18,7 @@ export default function Login() {
       [e.target.name]: e.target.value,
     });
   };
-  let history = useHistory();
+  
 const { isFetching, dispatch } = useContext(AuthContext);
 
 const login = (e) => {

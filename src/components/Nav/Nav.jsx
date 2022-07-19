@@ -1,13 +1,17 @@
 import "./Nav.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import React, { useContext }  from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Nav = () => {
   const pf = process.env.REACT_APP_PUBLIC_FOLDER;
-  // const [user, setUser] = useState({});
-  const { user } = useContext(AuthContext);
-  console.log(user)
+  const { user,dispatch } = useContext(AuthContext);
+  const history = useHistory()
+ const  logOut = (e)=>{
+   localStorage.removeItem("user");
+   dispatch({ type: "LOG_OUT" });
+   history.push("/login")
+ };
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-lg navbar-light ">
@@ -47,7 +51,7 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="nav-item  ">
-                <Link className="nav-link" to="#User_Reviews">
+                <Link className="nav-link" to="/notification">
                 <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>1</span>
                 <span class="fa-regular  fa-lg fa-bell"></span>
                 </Link>
@@ -64,11 +68,9 @@ const Nav = () => {
                   <img
                 className="profileUserImg"
                 src={
-                  user ?
                   user.profilePicture
                     ? pf + user.profilePicture
                     : `http://localhost:5000/${user.profileimg}`
-                    :" "
                 }
                 alt=""
               />
@@ -91,9 +93,9 @@ const Nav = () => {
                       Edit Profile
                     </Link>
                   </li>
-                  <Link className="dropdown-item" to="">
-                     Log-out
-                    </Link>
+                  <a className="dropdown-item" to="" style={{textAnchor:"none;",textDecoration:'none'}} onClick={logOut}>
+                    Log-out
+                    </a>
                   </>
                     :
                     <>
