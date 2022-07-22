@@ -38,33 +38,51 @@ const Nav = () => {
                 </Link>
               </li>
 
-              <li className="nav-item">
-                <a className="nav-link font-weight-" >
-                  Features
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="#User_Reviews">
-                <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>3</span>
-                <i class="fa-regular  fa-lg fa-envelope"></i>
-                </Link>
-              </li>
-              <li className="nav-item  ">
-                <Link className="nav-link" to="/notification">
-                <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>1</span>
-                <span class="fa-regular  fa-lg fa-bell"></span>
-                </Link>
-              </li>
               <li className="nav-item dropdown">
-                <Link
+                <a
                   className="nav-link dropdown-toggle"
                   id="navbarDropdownMenuLink"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  {/* <span className="fa fa-lg fa-regular fa-circle-user"></span> */}
+                  Features
+                </a>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                    <li>
+                    <Link to="/CreateRides" className="nav-link" >Offer a ride</Link>
+                  </li>
+                  <li>
+                  <Link to="/FindRides" className="nav-link"  ><span className="">Find a ride</span></Link>
+                  </li>
+
+                </ul>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link" >
+                <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>3</span>
+                <i className="fa-regular  fa-lg fa-envelope"></i>
+                </a>
+              </li>
+              <li className="nav-item  ">
+                <Link className="nav-link" to="/notification">
+                <span className="messages badge badge-pill badge-info" style={{float:"right",marginBottom:"-10px"}}>1</span>
+                <span className="fa-regular  fa-lg fa-bell"></span>
+                </Link>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                 
                   <img
                 className="profileUserImg"
                 src={
@@ -74,7 +92,7 @@ const Nav = () => {
                 }
                 alt=""
               />
-                </Link>
+                </a>
                 <ul
                   className="dropdown-menu"
                   aria-labelledby="navbarDropdownMenuLink"
@@ -83,7 +101,7 @@ const Nav = () => {
                     user!==null?
                     <>
                     <li className="nav-item">
-                    <Link className="dropdown-item" to="/Myprofile">
+                    <Link className="dropdown-item" to={`/profile/${user._id}`}>
                       My Profile
                     </Link>
                     

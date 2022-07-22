@@ -1,16 +1,46 @@
-import React, { useContext } from "react";
+import React, { useContext ,useState,useEffect} from "react";
 import "./Profile.css";
 import Button from "@mui/material/Button";
 import { Rating } from "@mui/material";
-// import {styleMaker} from "@mui/material"
-// import ReactTimeAgo from 'react-time-ago'
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { AuthContext } from "../../../context/AuthContext";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { Spinner } from "react-bootstrap";
+
 export default function ProfileView() {
-  const id = 10;
-  const { user } = useContext(AuthContext);
+  const { user:currentuser  } = useContext(AuthContext);
+  const [user, setuser] = useState({});
+  const [myprofile, setMyprofile] = useState(true);
+  const [loader, setLoader] = useState(true);
+  const userid = useParams().id;
+  useEffect(() => {
+    if(userid !== currentuser._id){
+      setMyprofile(false);
+      axios.get(`http://localhost:5000/api/users/userinfo/${userid}`).then(({data}) => {
+        console.log(data);
+        setuser(data);
+      })
+      
+    }
+    else
+    setuser(currentuser)
+
+    setLoader(false)
+},[userid,currentuser]);
+  
   const profileComplation = 60;
   return (
+    <>
+    {
+      
+      loader? 
+      <div className="d-flex h-100 justify-content-center align-items-center">
+
+        <Spinner animation="grow" />
+      </div>
+      :
+      
       <div classNameName="container">
         <div className="main-body">
           <div className="row gutters-sm">
@@ -26,7 +56,12 @@ export default function ProfileView() {
                     />
                     <div className="mt-3">
                       <h4>{user.fullname}</h4>
-                      <Button variant="contained">follow</Button>
+                      {
+
+                        myprofile &&
+                        <Button variant="contained">follow</Button>
+
+                      }
                       {/* <p className="text-secondary mb-1"> Last seen: <ReactTimeAgo date={date} locale="en-US"/></p> */}
                       <p className="text-muted font-size-sm">{user.address}</p>
                       <Rating
@@ -35,11 +70,16 @@ export default function ProfileView() {
                         readOnly
                         precision={0.5}
                       />
-                      <p> your profile</p>
-                      <ProgressBar
-                        now={profileComplation}
-                        label={`${profileComplation}% completed`}
-                      />
+                      {
+                          myprofile &&
+                        <>
+                        <p> your profile</p>
+                        <ProgressBar
+                          now={profileComplation}
+                          label={`${profileComplation}% completed`}
+                        />
+                        </>
+                      }
                     </div>
                   </div>
                 </div>
@@ -250,5 +290,7 @@ export default function ProfileView() {
           </div>
         </div>
       </div>
+    }
+     </>
   );
 }

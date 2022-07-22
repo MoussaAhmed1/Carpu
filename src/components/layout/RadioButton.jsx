@@ -17,7 +17,7 @@ export default function RadioButton({
             type="radio"
             className="btn-check"
             name={name}
-            id={radio == "any" ? radio + name : radio}
+            id={radio === "any" ? radio + name : radio}
             value={radio}
             autoComplete="off"
             key={++i}
@@ -25,7 +25,7 @@ export default function RadioButton({
           />
           <label
             className="btn btn-outline-primary"
-            htmlFor={radio == "any" ? radio + name : radio}
+            htmlFor={radio === "any" ? radio + name : radio}
             key={++i}
             >{radio}
           </label>

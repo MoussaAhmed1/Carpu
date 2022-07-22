@@ -1,24 +1,25 @@
+// import PlacesAutocomplete from "../layout/googleMaps/PlacesAutoComplete";
 import React from 'react'
 import './FindRides.css'
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import PlacesAutocomplete from "../layout/googleMaps/PlacesAutoComplete";
 export default function FindRides() {
   const [search,setSearch] = useState({
     from:"",
     to:"",
-    date:new Date(),
+    date:null,
     availbleSeats:"",
   })
   const[rides,setRides] = useState([]);
-
   const [selected, setSelected] = useState(null);
   let history = useHistory();
   
   const handelSubmit = (event) => {
     event.preventDefault();
-    console.log(search);
-    history.push(`/Rides/?${search.from},${search.to}`);
+    history.push({
+      pathname:"/Rides",
+      state:{...search},
+    });
   };
   const handelFrom = (from) => {
     setSearch({
@@ -38,7 +39,6 @@ export default function FindRides() {
     history.push("/");
   };
   let handelInput = (e) => {
-    console.log(e.target.name)
     setSearch({
       ...search,
       [e.target.name]: e.target.value,
@@ -51,20 +51,38 @@ export default function FindRides() {
         <form action="#">
           <div className="form-group d-sm-flex margin">
             <div className="d-flex align-items-center flex-fill me-sm-1 my-sm-0 my-4 border-bottom position-relative">
-              <PlacesAutocomplete
+              {/* <PlacesAutocomplete
                 setSelected={setSelected}
                 handelInput={handelFrom}
+                value={search.from}
                 name="from"
+              /> */}
+              <input type="text" 
+              required
+              placeholder="From"
+              className="form-control"
+              onChange={(e)=>handelInput(e)}
+              value={search.from}
+              name="from"
               />
               <div className="label" id="from"></div>
               <span className="fas fa-dot-circle text-muted"></span>
             </div>
             <div className="d-flex align-items-center flex-fill ms-sm-1 my-sm-0 my-4 border-bottom position-relative">
-              <PlacesAutocomplete
+              {/* <PlacesAutocomplete
                 setSelected={setSelected}
-                handelInput={handelTo}
+                handelInput={(e)=>handelTo(e.target.value)}
+                value={search.from}
                 name="to"
-              />{" "}
+              />{" "} */}
+              <input type="text" 
+              required
+              placeholder="to"
+              className="form-control"
+              onChange={(e)=>handelInput(e)}
+              value={search.to}
+              name="to"
+              />
               <div className="label" id="to"></div>
               <span className="fas fa-map-marker text-muted"></span>
             </div>
@@ -92,6 +110,8 @@ export default function FindRides() {
               onChange={(e)=>handelInput(e)}
               value={search.availbleSeats}
               name={"availbleSeats"}
+              min={1}
+              max={10}
             />
             <div className="label" id="psngr"></div>
             <span className="fas fa-users text-muted"></span>

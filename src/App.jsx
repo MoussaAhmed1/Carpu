@@ -17,6 +17,7 @@ import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import RateDriver from './components/RateThedriver/RateDriver';
 import Notifications from './components/Notofications/Notifications';
+import EmailVerification from './components/auth/signup/EmailVerification';
 function App() {
   const { user } = useContext(AuthContext);
   return (
@@ -46,7 +47,7 @@ function App() {
           <Route path="/Sign-up" exact>
           {user ? <Redirect to="/" /> : <Signup />}
           </Route>
-          <Route path="/Myprofile" exact>
+          <Route path="/profile/:id" exact>
           {user ?  <ProfileView /> :  <Login/>}
            
           </Route>
@@ -58,6 +59,9 @@ function App() {
           </Route>
           <Route path="/notification" exact>
             <Notifications />
+          </Route>
+          <Route path="/Confirmation" exact>
+            <EmailVerification />
           </Route>
           <Route path="*">
             <Error404 />

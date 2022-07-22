@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import "./CreateRide.css";
 import RadioButton from "../layout/RadioButton";
 import { useHistory } from "react-router-dom";
 import MyCalendar from "../layout/Date_Time/MyCalender";
 import GoogleMaps from "../layout/googleMaps/GoogleMaps";
-// import Places from "../layout/GoogleMapApi/MygoogleMap";
-// import PlacesAutocomplete from './../layout/googleMaps/PlacesAutoComplete';
+import  axios  from 'axios';
+import { AuthContext } from './../../context/AuthContext';
 export default function CreateRides() {
+  const { user } = useContext(AuthContext);
   const [ride, setRide] = useState({
+    userid:user._id,
     from: "",
     to: "",
     gender: "",
@@ -18,12 +20,12 @@ export default function CreateRides() {
     seats: "",
     payment: "",
     fare: "",
-    date: new Date(),
+    date: null,
     time: null,
-    created: new Date(),
-    distance: 0,
+    created: null,
+    distance: "",
     duration: "",
-    // htmlFormatDate(props.date)
+    joinedusers:""
   });
   const pf = process.env.REACT_APP_PUBLIC_FOLDER;
   // const [selected, setSelected] = useState(null);
@@ -41,15 +43,35 @@ export default function CreateRides() {
     history.push("/");
   };
   const handelDate = (date) => {
-    setRide({
-      ...ride,
-      date: date,
-    });
+    const  str_date = date.toISOString().slice(0,10).replace(/--/g,"");
+   setRide({
+    ...ride,
+    date: str_date,
+  }); 
   };
 
-  const handelSubmit = (event) => {
+
+
+
+
+//submit
+  const handelSubmit = async(event) => {
     event.preventDefault();
-    console.log(ride);
+    const dt =new Date()  
+ const  str_created =  dt.toISOString().slice(0,10).replace(/--/g,"");
+    setRide({
+      ...ride,
+      created: str_created
+    }); 
+    console.log(ride)
+    try{
+      const res =  await axios.post('http://localhost:5000/api/rides/offer_ride',ride)
+      console.log(res)
+    }
+    catch(err){
+      console.log("first")
+      console.log(err);
+    }
   };
   const handelFrom = (from) => {
     setRide({
@@ -132,7 +154,7 @@ export default function CreateRides() {
         </div> */}
           <hr />
           <h3>{"Date & time"}</h3>
-          <MyCalendar date={ride.date} handelDate={handelDate} />
+          <MyCalendar date={new Date()} handelDate={handelDate} />
           <input
             type="time"
             name="time"
@@ -211,6 +233,7 @@ export default function CreateRides() {
             type="submit"
             value="submit"
             className="btn btn-lg btn-primary mx-2"
+            
           />
           <input
             type="reset"
